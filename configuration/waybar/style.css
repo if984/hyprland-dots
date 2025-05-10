@@ -1,0 +1,173 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", sans-serif;
+    font-size: 12px;
+    min-height: 0;
+}
+
+/* СТИЛЬ ПАНЕЛИ */
+window#waybar {
+    background: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+/* РАБОЧИЕ ПРОСТРАНСТВА */
+#workspaces button {
+    padding: 0 8px;
+    background: transparent;
+    color: #cdd6f4;
+    border-bottom: 1px solid transparent;
+}
+
+#workspaces button.focused {
+    border-bottom: 2px solid #89b4fa;
+}
+
+#workspaces button.urgent {
+    color: #000000;
+    background: #f38ba8;
+}
+
+/* ВЫВОД НАГРУЗКИ CPU */
+#custom-cpu-usage {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+#custom-cpu-usage.critical {
+    color: #f7768e;
+}
+
+#custom-cpu-usage.warning {
+    color: #e0af68;
+}
+
+/* ВЫВОД ТЕМПЕРАТУРЫ CPU */
+#custom-cpu-temp {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+#custom-cpu-temp.critical {
+    color: #f7768e;
+}
+
+#custom-cpu-temp.warning {
+    color: #e0af68;
+}
+
+/* ВЫВОД ИСПОЛЬЗУЕМОЙ RAM */
+#memory {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+/* ВЫВОД КОЛИЧЕСТВА ОБНОВЛЕНИЙ */
+#custom-package-updates {
+    color: #76f77a;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+#custom-package-updates.critical {
+    color: #f7768e;
+}
+
+#custom-package-updates.warning {
+    color: #e0e068;
+}
+
+/* ВЫВОД ЗАНЯТОЙ ПАМЯТИ НА ДИСКЕ */
+#disk {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+
+/* ВЫВОД ИНФОРМАЦИИ О СЕТИ WI-FI */
+#network {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+/* ВЫВОД ИНФОРМАЦИИ О ЗВУКЕ */
+#pulseaudio {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+#pulseaudio.muted {
+    color: #f7768e;
+}
+
+/* ВЫВОД ТЕКУЩЕЙ РАСКЛАДКИ КЛАВИАТУРЫ */
+#custom-keyboard-layout {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+/* ВЫВОД ИНФОРМАЦИИ О БАТАРЕИ */
+#battery {
+    color: #76f77a;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+#battery.charging {
+    color: #76f1f7;
+    animation: pulse 2s infinite;
+}
+
+#battery.warning {
+    color: #e0af68;
+    animation: blink 4s infinite;
+}
+
+#battery.critical {
+    color: #f7768e;
+    animation: blink-fast 0.7s infinite;
+}
+
+#battery.critical:not(.charging) {
+    animation: blink-urgent 0.3s infinite steps(2);
+}
+
+/* ВРЕМЯ И ДАТА */
+#clock {
+    color: #cdd6f4;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+/* АНИМАЦИЯ */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.1; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes blink-fast {
+    0% { opacity: 1; }
+    50% { opacity: 0.1; }
+    100% { opacity: 1; }
+}
+
+@keyframes blink-urgent {
+    50% { background-color: #f7768e; color: #000000; }
+    100% { background-color: transparent; color: #f7768e; }
+}

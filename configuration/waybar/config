@@ -1,0 +1,113 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+    "spacing": 0,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/cpu-usage", "custom/cpu-temp", "memory"],
+    "modules-right": ["custom/package-updates", "disk#home", "disk", "network", "pulseaudio", "custom/keyboard-layout", "battery", "clock"],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "persistent_workspaces": 5,
+        "active-only": false
+    },
+
+    "custom/cpu-usage": {
+        "exec": "~/.config/waybar/scripts/cpu-usage.sh",
+        "return-type": "json",
+        "format": " {}%",
+        "interval": 5
+    },
+
+    "custom/cpu-temp": {
+        "exec": "~/.config/waybar/scripts/cpu-temp.sh",
+        "return-type": "json",
+        "format": " {}°C",
+        "interval": 5
+    },
+
+    "memory": {
+        "format": " {used:0.1f}G",
+        "interval": 5
+    },
+
+    "custom/package-updates": {
+        "exec": "~/.config/waybar/scripts/package-updates.sh",
+        "return-type": "json",
+        "format": " {}",
+        "interval": 3600
+    },
+
+    "disk": {
+        "format": " {free}",
+        "path": "/",
+        "interval": 60
+    },
+
+    "disk#home": {
+        "format": " {free}",
+        "path": "/home",
+        "interval": 60
+    },
+
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": " No connection",
+        "interval": 1
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "{icon} 0%",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+
+    "custom/keyboard-layout": {
+        "exec": "~/.config/waybar/scripts/keyboard-layout.sh",
+        "return-type": "json",
+        "format": " {}",
+        "interval": 1,
+        "signal": 1,
+        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+
+    "battery-old": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": " {capacity}%",
+        "interval": 10
+    },
+
+    "battery": {
+        "states": {
+            "warning": 50,
+            "critical": 30
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-warning": " {capacity}%",
+        "format-critical": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "interval": 1
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip": false
+    }
+
+}

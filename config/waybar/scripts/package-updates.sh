@@ -1,21 +1,18 @@
 #!/bin/bash
 
-# Проверка AUR
 SHOW_AUR=true
-
-# Кэш обновлений
 LAST_UPDATE_CHECK=0
 
-# Функции получения данных
+# Getting data
 check_updates() {
-  # PACMAN обновления
+  # PACMAN
   if ! command -v checkupdates &>/dev/null; then
     echo "Error: checkupdates not installed!" >&2
     return 1
   fi
   pacman_updates=$(checkupdates 2>/dev/null | wc -l)
   
-  # AUR обновления
+  # AUR
   if [[ "$SHOW_AUR" == true ]] && command -v yay &>/dev/null; then
     aur_updates=$(yay -Qua 2>/dev/null | wc -l)
   else
@@ -25,7 +22,7 @@ check_updates() {
   echo $((pacman_updates + aur_updates))
 }
 
-# Обновляем кэш каждый 1 час
+# We update the cache every 1 hour
 if (( $(date +%s) - LAST_UPDATE_CHECK >= 3600 )); then
   if CACHED_UPDATE_COUNT=$(check_updates); then
     LAST_UPDATE_CHECK=$(date +%s)
@@ -34,7 +31,7 @@ if (( $(date +%s) - LAST_UPDATE_CHECK >= 3600 )); then
   fi
 fi
 
-# Формируем блок
+# Forming a block
 if (( CACHED_UPDATE_COUNT == -1 )); then
   echo "{\"text\": \"ERROR\", \"class\": \"critical\"}"
 elif (( CACHED_UPDATE_COUNT > 0 )); then

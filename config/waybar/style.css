@@ -6,14 +6,14 @@
     min-height: 0;
 }
 
-/* СТИЛЬ ПАНЕЛИ */
+/* PANEL STYLE */
 window#waybar {
     background: rgba(30, 30, 46, 0.9);
     color: #cdd6f4;
     border-bottom: 1px solid rgba(100, 100, 100, 0.2);
 }
 
-/* РАБОЧИЕ ПРОСТРАНСТВА */
+/* WORKSPACES */
 #workspaces button {
     padding: 0 8px;
     background: transparent;
@@ -30,7 +30,7 @@ window#waybar {
     background: #f38ba8;
 }
 
-/* ВЫВОД НАГРУЗКИ CPU */
+/* CPU LOAD */
 #custom-cpu-usage {
     color: #cdd6f4;
     padding: 0 5px;
@@ -45,7 +45,7 @@ window#waybar {
     color: #e0af68;
 }
 
-/* ВЫВОД ТЕМПЕРАТУРЫ CPU */
+/* CPU TEMPERATURE */
 #custom-cpu-temp {
     color: #cdd6f4;
     padding: 0 5px;
@@ -60,14 +60,14 @@ window#waybar {
     color: #e0af68;
 }
 
-/* ВЫВОД ИСПОЛЬЗУЕМОЙ RAM */
+/* USED ​​RAM */
 #memory {
     color: #cdd6f4;
     padding: 0 5px;
     margin: 0 2px;
 }
 
-/* ВЫВОД КОЛИЧЕСТВА ОБНОВЛЕНИЙ */
+/* NUMBER OF UPDATES */
 #custom-package-updates {
     color: #76f77a;
     padding: 0 5px;
@@ -82,7 +82,7 @@ window#waybar {
     color: #e0e068;
 }
 
-/* ВЫВОД ЗАНЯТОЙ ПАМЯТИ НА ДИСКЕ */
+/* DISK MEMORY USED */
 #disk {
     color: #cdd6f4;
     padding: 0 5px;
@@ -90,14 +90,14 @@ window#waybar {
 }
 
 
-/* ВЫВОД ИНФОРМАЦИИ О СЕТИ WI-FI */
+/* Wi-Fi NETWORK */
 #network {
     color: #cdd6f4;
     padding: 0 5px;
     margin: 0 2px;
 }
 
-/* ВЫВОД ИНФОРМАЦИИ О ЗВУКЕ */
+/* SOUND */
 #pulseaudio {
     color: #cdd6f4;
     padding: 0 5px;
@@ -108,14 +108,14 @@ window#waybar {
     color: #f7768e;
 }
 
-/* ВЫВОД ТЕКУЩЕЙ РАСКЛАДКИ КЛАВИАТУРЫ */
+/* CURRENT KEYBOARD LAYOUT */
 #custom-keyboard-layout {
     color: #cdd6f4;
     padding: 0 5px;
     margin: 0 2px;
 }
 
-/* ВЫВОД ИНФОРМАЦИИ О БАТАРЕИ */
+/* BATTERY */
 #battery {
     color: #76f77a;
     padding: 0 5px;
@@ -141,14 +141,14 @@ window#waybar {
     animation: blink-urgent 0.3s infinite steps(2);
 }
 
-/* ВРЕМЯ И ДАТА */
+/* TIME AND DATE */
 #clock {
     color: #cdd6f4;
     padding: 0 5px;
     margin: 0 2px;
 }
 
-/* АНИМАЦИЯ */
+/* ANIMATION */
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 0.5; }

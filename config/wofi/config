@@ -1,0 +1,24 @@
+; WINDOW DIMENSIONS
+; width=300
+; height=300
+
+; WINDOW POSITIONING
+location=center
+
+; WINDOW VISUALIZATION
+prompt=Search...
+allow_markup=true
+halign=fill
+content_halign=fill
+orientation=vertical
+no_actions=true
+dynamic_lines=true
+
+; IMAGES
+allow_images=true
+image_size=25
+
+; FUNCTIONAL
+show=drun
+filter_rate=500
+insensitive=true

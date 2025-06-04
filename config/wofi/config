@@ -20,5 +20,5 @@ image_size=25
 
 ; FUNCTIONAL
 show=drun
-filter_rate=500
+filter_rate=100
 insensitive=true
